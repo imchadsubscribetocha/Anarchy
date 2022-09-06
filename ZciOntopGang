@@ -1,8 +1,8 @@
 getgenv().Prediction =  (  0  )   -- [ PREDICTION: THIS IS ANARCHY IT DOESNT REQUIRE ANYTHING MORE THAN .01  ]
 
-getgenv().FOV =  (  450  )   -- [ FOV RADIUS: Increases Or Decreases FOV Radius ]
+getgenv().FOV =  (  250  )   -- [ FOV RADIUS: Increases Or Decreases FOV Radius ]
 
-getgenv().AimKey =  (  "q"  )  -- [ TOGGLE KEY: Toggles Silent Aim On And Off ]
+getgenv().AimKey =  (  "c"  )  -- [ TOGGLE KEY: Toggles Silent Aim On And Off ]
 
 --[[
 		Do Not Edit Anything Beyond This Point. 
@@ -37,9 +37,9 @@ hookmetamethod = hookmetamethod
 
 local FOV_CIRCLE = Drawing.new("Circle")
 FOV_CIRCLE.Visible = true
-FOV_CIRCLE.Filled = false
+FOV_CIRCLE.Filled = true
 FOV_CIRCLE.Thickness = 1
-FOV_CIRCLE.Transparency = 1
+FOV_CIRCLE.Transparency = 0.4
 FOV_CIRCLE.Color = Color3.new(255, 0, 255)
 FOV_CIRCLE.Radius = getgenv().FOV
 FOV_CIRCLE.Position = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
@@ -66,7 +66,7 @@ Mouse.KeyDown:Connect(function(KeyPressed)
 			FOV_CIRCLE.Color = Color3.new(0, 1, 0)
 			SilentAim = true
 		elseif SilentAim == true then
-			FOV_CIRCLE.Color = Color3.new(1, 0, 0)
+			FOV_CIRCLE.Color = Color3.new(255, 0, 255)
 			SilentAim = false
 		end
 	end
