@@ -63,10 +63,10 @@ end coroutine.wrap(MoveFovCircle)()
 Mouse.KeyDown:Connect(function(KeyPressed)
 	if KeyPressed == (getgenv().AimKey:lower()) then
 		if SilentAim == false then
-			FOV_CIRCLE.Color = Color3.new(0, 1, 0)
+			FOV_CIRCLE.Color = Color3.new(255, 0, 255)
 			SilentAim = true
 		elseif SilentAim == true then
-			FOV_CIRCLE.Color = Color3.new(255, 0, 255)
+			FOV_CIRCLE.Color = Color3.new(0, 0, 0)
 			SilentAim = false
 		end
 	end
